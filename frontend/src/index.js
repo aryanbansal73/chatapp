@@ -1,24 +1,19 @@
 import React from 'react';
-import ReactDOM from 'react-dom/client';
+import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
-import reportWebVitals from './reportWebVitals';
 import { ChakraProvider } from '@chakra-ui/react'
-import { Button, ButtonGroup } from '@chakra-ui/react'
 import{BrowserRouter} from "react-router-dom"
-import ChatProvider from './Context/ChatProvider';
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  <ChatProvider>
+import ChatProvider  from './Context/ChatProvider';
+
+ReactDOM.render(
+  <ChakraProvider>
     <BrowserRouter>
-    <ChakraProvider>
+    <ChatProvider >
       <App />
-    </ChakraProvider>
+    </ChatProvider>
     </BrowserRouter>
-  </ChatProvider>
+  </ChakraProvider>,
+  document.getElementById('root')
 );
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();

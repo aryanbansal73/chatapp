@@ -4,10 +4,10 @@ const messageModel = mongoose.Schema({
         type : mongoose.Schema.Types.ObjectId , ref:'user'
     },
     content:{type:String , trim:true} ,
-    chat:{type : mongoose.Schema.Types.ObjectId , ref:'Chat'}
+    chat:{type : mongoose.Schema.Types.ObjectId , ref:'chat'}
 },
 {
     timestamps : true ,
 });
-const message= mongoose.model("Messgae",messageModel) ;
-module.exports = message ;
+const Message= mongoose.model("Message",messageModel) ;
+module.exports = Message ;
